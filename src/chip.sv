@@ -47,7 +47,7 @@ endmodule
 module my_chip
   (input logic [5:0] A, B,
    input clock, reset,
-   output logic [3:0] Out);
+   output logic [3:0] io_out);
   //RTL
   logic en, load, enRT, enRO;
   logic [5:0] Shifted_A, Shifted_B;
@@ -64,7 +64,7 @@ module my_chip
   Mux mux(.A(oldSum), .B(4'b0), .sel, .Out(choice));
   Adder add(.First(newTerm), .Second(choice), .Out(inReg));
   Reg registerTemp(.In(inReg), .clk(clock), .en(enRT), .Out(oldSum));
-  Reg registerOut(.In(oldSum), .clk(clock), .en(enRO), .Out);
+  Reg registerOut(.In(oldSum), .clk(clock), .en(enRO), .Out(io_out));
   //FSM Output
   enum logic [2:0] {Start = 3'b000, Shift1 = 3'b001,
                    Shift2 = 3'b010, Shift3 = 3'b011,
