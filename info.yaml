@@ -15,7 +15,7 @@ documentation:
   title:        "6-bit Convolutor Tapeout"  
   description:  "Returns the convolution of two 6-bit inputs"
   how_it_works: "Inputs passed through ALU. Final result stored in a register."    
-  how_to_test:  "SystemVerilog testbench" 
+  how_to_test:  "See README file provided in doc_link" 
   external_hw:  "None"  
   language:     "SystemVerilog"
   doc_link:     "https://github.com/yushuang-liu/98154-Convolutor/blob/main/README.md" 
