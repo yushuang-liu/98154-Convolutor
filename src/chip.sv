@@ -66,10 +66,10 @@ module my_chip
   Reg registerTemp(.In(inReg), .clk(clock), .en(enRT), .Out(oldSum));
   Reg registerOut(.In(oldSum), .clk(clock), .en(enRO), .Out(io_out));
   //FSM Output
-  enum logic [2:0] {Start = 3'b000, Shift1 = 3'b001,
-                   Shift2 = 3'b010, Shift3 = 3'b011,
-                   Shift4 = 3'b100, Shift5 = 3'b101,
-                   End = 3'b110} 
+  enum logic [2:0] {Start = 3'b000, Wait = 3'b001,
+                   Shift1 = 3'b010, Shift2 = 3'b011,
+                   Shift3 = 3'b100, Shift4 = 3'b101,
+                   Shift5 = 3'b110, End = 3'b111} 
                    curState, nextState;
   always_comb begin
     case (curState)
@@ -78,6 +78,13 @@ module my_chip
         en = 0;
         sel = 0;
         enRT = 1;
+        enRO = 0;
+      end
+      Wait: begin
+        load = 0;
+        en = 1;
+        sel = 1;
+        enRT = 0;
         enRO = 0;
       end
       Shift1: begin
@@ -134,7 +141,8 @@ module my_chip
   //FSM Transfer
   always_comb begin
     case (curState)
-      Start: nextState = Shift1;
+      Start: nextState = Wait;
+      Wait: nextState = Shift1;
       Shift1: nextState = Shift2;
       Shift2: nextState = Shift3;
       Shift3: nextState = Shift4;
