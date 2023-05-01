@@ -26,7 +26,7 @@ No additional hardware peripherals is used.
 
 ## Design Testing / Bringup
 
-The design is tested with a testbench written in SystemVerilog. Test input is 12'b110111110101, test output is 4'b0100, as desired.
+This design was tested with a testbench written in SystemVerilog. After manufacturing, input a random 12 bit number to the 12 input pins (by switches, for instance), and collect the output at the lower 4 output pins. If for testing purpose only, the collection can be done by measuring the voltage difference between the pins and the voltage rails. An example of  input is 12'b110111110101, the output should be 4'b0100.
 
 ## Media
 
