@@ -13,7 +13,7 @@ The input signals are passed into shift registers to get the LSB's on every risi
 
 Here are the RTL and FSM for the design:
 RTL: 
-![](RTL Final.jpg)
+![](https://github.com/yushuang-liu/98154-Convolutor/blob/main/RTL%20Final.jpg)
 FSM:
 ![](https://github.com/yushuang-liu/98154-Convolutor/blob/main/FSM%20Final.jpg)
 
