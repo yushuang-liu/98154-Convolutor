@@ -15,7 +15,7 @@ Here are the RTL and FSM for the design:
 RTL: 
 ![](RTL Final.jpg)
 FSM:
-![](FSM Final.jpg)
+![](https://github.com/yushuang-liu/98154-Convolutor/blob/main/FSM%20Final.jpg)
 
 ## Inputs/Outputs
 
