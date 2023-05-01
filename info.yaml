@@ -8,23 +8,21 @@ project:
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
 # it does and how to operate it.
 #
-# Here is an example: https://github.com/mattvenn/tinytapeout_m_segments/blob/main/info.yaml
-#
 # This info will be automatically collected and used to make a datasheet for the chip.
 documentation: 
-  author:       "Yushuang Liu"      # Your name
-  discord:      ""      # Your discord handle
-  title:        "Convolutor Tapeout"      # Project title
-  description:  "Convolutes two 6-bit inputs"      # Short description of what your project does
-  how_it_works: ""      # Longer description of how the project works
-  how_to_test:  "PLACEHOLDER"      # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
-  external_hw:  "PLACEHOLDER"      # Describe any external hardware needed
-  language:     "SystemVerilog" # other examples include Verilog, Amaranth, VHDL, etc
-  doc_link:     ""      # URL to longer form documentation, eg the README.md in your repository
-  clock_hz:     1000       # Clock frequency in Hz (if required)
-  picture:      ""      # relative path to a picture in your repository
+  author:       "Yushuang Liu"     
+  discord:      ""     
+  title:        "6-bit Convolutor Tapeout"  
+  description:  "Returns the convolution of two 6-bit inputs"
+  how_it_works: "Inputs passed through ALU. Final result stored in a register."    
+  how_to_test:  "SystemVerilog testbench" 
+  external_hw:  "None"  
+  language:     "SystemVerilog"
+  doc_link:     "https://github.com/yushuang-liu/98154-Convolutor/blob/main/README.md" 
+  clock_hz:     0
+  picture:      "RTL Final.jpg"   
   inputs:               # a description of what the inputs do
-    - none
+    - io_in
     - none
     - none
     - none
@@ -33,7 +31,7 @@ documentation:
     - none
     - none
   outputs:
-    - none
+    - io_out
     - none
     - none
     - none
