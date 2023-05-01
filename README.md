@@ -12,8 +12,9 @@ This device takes in two 6-bit inputs and returns their convolution result. To a
 The input signals are passed into shift registers to get the LSB's on every rising clock edge. The LSB's are then input into a one-bit multiplier (implemented simply as anding). An adder sums together all the products. One of the inputs is the new product, and the other is either the existing sum or zero, selected by a Mux. The final output is stored to a register. All devices are controlled by an FSM with 8 states.
 
 Here are the RTL and FSM for the design:
-
+RTL: 
 ![](RTL Final.jpg)
+FSM:
 ![](FSM Final.jpg)
 
 ## Inputs/Outputs
