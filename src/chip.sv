@@ -45,7 +45,7 @@ endmodule
 
 //Convolutor
 module my_chip
-  (input logic [5:0] A, B,
+  (input logic [11:0] io_in,
    input clock, reset,
    output logic [3:0] io_out);
   //RTL
@@ -54,9 +54,9 @@ module my_chip
   logic newTerm;
   logic sel;
   logic [3:0] inReg, oldSum, choice;
-  shiftReg shiftA(.In(A), .en, .load, 
+  shiftReg shiftA(.In(io_in[5:0]), .en, .load, 
                   .clk(clock), .Shifted(Shifted_A));
-  shiftReg shiftB(.In(B), .en, .load, 
+  shiftReg shiftB(.In(io_in[11:6]), .en, .load, 
                   .clk(clock), .Shifted(Shifted_B));
   Multiplier mul(.First(Shifted_A[0]), 
                  .Second(Shifted_B[0]), 
