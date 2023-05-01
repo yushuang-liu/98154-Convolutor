@@ -122,6 +122,13 @@ module my_chip
         enRT = 0;
         enRO = 1;
       end
+      default: begin
+        load = 1;
+        en = 0;
+        sel = 0;
+        enRT = 1;
+        enRO = 0;
+      end
     endcase
   end
   //FSM Transfer
