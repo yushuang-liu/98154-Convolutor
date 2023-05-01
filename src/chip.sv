@@ -134,6 +134,7 @@ module my_chip
       Shift4: nextState = Shift5;
       Shift5: nextState = End;
       End: nextState = End;
+      default: nextState = Start;
     endcase
   end
   always_ff @(posedge clock, posedge reset)
